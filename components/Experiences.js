@@ -1,59 +1,60 @@
 import Image from "next/image";
-import code from "../public/code.png";
-import design from "../public/design.png";
-import consulting from "../public/consulting.png";
+import watchtowr from "../public/watchTowr.png";
+import ezgreen from "../public/ezgreen.png";
 
-export const Experiences = () => {
+const experiences = [
+  {
+    id: 1,
+    img: ezgreen,
+    title: "Freelance Software Engineer",
+    company: "EzGreen",
+    period: "Aug 2022 - Present",
+    tools: ["Flutter"],
+    description:
+      "Building a gamified journaling app to advocate sustainable practices.",
+  },
+  {
+    id: 2,
+    img: watchtowr,
+    title: "Cybersecurity Engineer Intern",
+    company: "watchTowr",
+    period: "Jun 2022 - Jul 2022",
+    tools: ["Python", "Docker", "Apache Airflow"],
+    description:
+      "Wrote Python scripts to automatically discover clients' attack surfaces and potential vulnerabilities. Scripts are deployed on watchTowr's labs to simplify security researchers' daily tasks.",
+  },
+];
+
+const Experiences = () => {
   return (
-    <div id="experience">
-          <div>
-            <h3 className="text-5xl pb-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">Experience</h3>
-          </div>
-          <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2  ">
-                Beautiful Designs
-              </h3>
-              <p className="py-2">
-                Creating elegant designs suited for your needs following core
-                design theory.
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2 ">
-                Code your dream project
-              </h3>
-              <p className="py-2">
-                Do you have an idea for your next great website? Let&apos;s make it a
-                reality.
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={consulting} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
-              <p className="py-2">
-                Are you interested in feedback for your current project? I can
-                give you tips and tricks to level it up.
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
-          </div>
-        </div>
-  )
-}
+    <div className="pb-10">
+      <h3 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+        Work experience
+      </h3>
+      <div className="flex flex-col items-center gap-10 py-10">
+        {experiences.map(
+          ({ id, img, title, company, period, tools, description }) => {
+            return (
+              <div
+                key={id}
+                className="block max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+              >
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {company}
+                </h5>
+                <h2 className="font-bold tracking-tight text-gray-900 dark:text-white">
+                  {title}
+                </h2>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  {description}
+                </p>
+              </div>
+            );
+          }
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Experiences;
