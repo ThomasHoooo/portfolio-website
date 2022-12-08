@@ -8,10 +8,10 @@ const experiences = [
     img: ezgreen,
     title: "Freelance Software Engineer",
     company: "EzGreen",
-    period: "Aug 2022 - Present",
+    period: "Dec 2022 - Present",
     tools: ["Flutter"],
     description:
-      "Building a gamified journaling app to advocate sustainable practices.",
+      "I am currently building a gamified journaling app to advocate sustainable practices.",
   },
   {
     id: 2,
@@ -35,19 +35,25 @@ const Experiences = () => {
         {experiences.map(
           ({ id, img, title, company, period, tools, description }) => {
             return (
-              <div
-                key={id}
-                className="block max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-              >
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {company}
-                </h5>
-                <h2 className="font-bold tracking-tight text-gray-900 dark:text-white">
-                  {title}
-                </h2>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
-                  {description}
-                </p>
+              <div key={id} className="flex flex-row items-center relative">
+                <div className="flex flex-col relative max-w-lg max-h-lg p-6 border border-gray-200 rounded-lg shadow-2xl hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-gray-900 dark:text-white">
+                  <div className="text-4xl font-bold tracking-tight ">
+                    {company}
+                  </div>
+                  <div>{period}</div>
+                  <div className="text-2xl my-2 tracking-tight ">{title}</div>
+                  <p className="font-normal text-gray-700 dark:text-gray-400">
+                    {description}
+                  </p>
+                  <div className="my-3 text-gray-700 dark:text-gray-400">{`Tech stack: ${tools.map(
+                    (tool) => {
+                      return " " + tool;
+                    }
+                  )}`}</div>
+                  <div className="mx-auto lg:absolute lg:-right-36 rounded-full overflow-hidden h-28 w-28 lg:h-44 lg:w-44 border-2 border-teal-400">
+                    <Image src={img} />
+                  </div>
+                </div>
               </div>
             );
           }

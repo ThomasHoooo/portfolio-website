@@ -27,7 +27,7 @@ const projects = [
     img: dequeue,
     title: "Dequeue",
     github: "https://github.com/junweimoo/dequeue-app",
-    role: "Developer",
+    role: "Full Stack Engineer",
     tools: ["Flutter", "Firebase"],
     description:
       "Developed a full stack mobile app for NUS students to queue for and buy food online, as well as for vendors to organise their menu and orders.",
@@ -61,7 +61,12 @@ const Projects = () => {
                 className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1"
               >
                 <Image src={img} />
-                <h3 className="text-lg font-medium pt-6 pb-2">{title}</h3>
+                <h3 className="text-lg font-medium pt-6 pb-2">
+                  {role} @
+                  <span className="underline font-bold text-teal-600 dark:text-teal-400">
+                    {title}
+                  </span>
+                </h3>
                 <p className="text-start py-2">{description}</p>
                 <h4 className="py-4 text-teal-600">Tech stack</h4>
                 {tools.map((tool) => (
