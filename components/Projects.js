@@ -58,22 +58,24 @@ const Projects = () => {
             return (
               <div
                 key={id}
-                className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1"
+                className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1 hover:scale-105 cursor-pointer"
               >
-                <Image src={img} />
-                <h3 className="text-lg font-medium pt-6 pb-2">
-                  {role} @
-                  <span className="underline font-bold text-teal-600 dark:text-teal-400">
-                    {title}
-                  </span>
-                </h3>
-                <p className="text-start py-2">{description}</p>
-                <h4 className="py-4 text-teal-600">Tech stack</h4>
-                {tools.map((tool) => (
-                  <p key={`${tool.id}`} className="text-gray-800 py-1">
-                    {tool}
-                  </p>
-                ))}
+                <a target="_blank" href={github} rel="noopener noreferrer">
+                  <Image src={img} />
+                  <h3 className="text-lg font-medium pt-6 pb-2">
+                    {role} @
+                    <span className="underline font-bold text-teal-600 dark:text-teal-400">
+                      {title}
+                    </span>
+                  </h3>
+                  <p className="text-start py-2">{description}</p>
+                  <h4 className="py-4 text-teal-600">Tech stack</h4>
+                  {tools.map((tool) => (
+                    <p key={`${tool.id}`} className="text-gray-800 py-1">
+                      {tool}
+                    </p>
+                  ))}
+                </a>
               </div>
             );
           }

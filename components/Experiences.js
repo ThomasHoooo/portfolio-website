@@ -50,7 +50,7 @@ const Experiences = () => {
                       return " " + tool;
                     }
                   )}`}</div>
-                  <div className="mx-auto lg:absolute lg:-right-36 rounded-full overflow-hidden h-28 w-28 lg:h-44 lg:w-44 border-2 border-teal-400">
+                  <div className="mx-auto shadow-2xl lg:absolute lg:-right-36 rounded-full overflow-hidden h-28 w-28 lg:h-44 lg:w-44 border-2 border-teal-400">
                     <Image src={img} />
                   </div>
                 </div>
